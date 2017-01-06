@@ -12,7 +12,7 @@ moduleExports.distDir = [
 //dist目录：发布之前每个项目的所有静态文件都会放到每个项目的dist文件夹底下
 moduleExports.destDir = path.resolve(moduleExports.rootDir,'./dist/');
 //version所在的目录
-moduleExports.versionRootDir = path.resolve(moduleExports.rootDir,'../config/');
+moduleExports.versionRootDir = path.resolve(moduleExports.rootDir,'./');
 //version文件
 moduleExports.versionDir = path.resolve(moduleExports.versionRootDir,'./version.json');
 //所有app都放在该目录底下
@@ -22,5 +22,7 @@ moduleExports.cleanDir=[
     `${moduleExports.rootDir}/apps/*/dist/`,
     `${moduleExports.rootDir}/dist/`,
 ];
+moduleExports.distDirTemplate=`${moduleExports.rootDir}/apps/<%= project %>/dist/**`;
+moduleExports.destDirTemplate=`${moduleExports.rootDir}/dist/<%= project %>/`;
 
 module.exports = moduleExports;

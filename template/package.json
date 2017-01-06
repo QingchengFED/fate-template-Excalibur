@@ -5,9 +5,10 @@
   "author": "zifenli <zifenli@gmail.com>",
   "private": true,
   "scripts": {
-    "build": "gulp build --env build --dir",
-    "preBuild": "gulp build --env preBuild --dir",
-    "publish": "gulp publish --dir"
+    "test":"gulp test --env build --dirStr",
+    "build": "gulp build --env build --dirStr",
+    "preBuild": "gulp build --env preBuild --dirs",
+    "publish": "gulp publish --dirStr"
   },
   "dependencies": {
     "archer-vue-alert": "^1.0.3",

@@ -1,0 +1,24 @@
+{
+  "project1": {
+    "version": 1483687720609,
+    "dev": {
+      "_env": "development",
+      "_root": "/static/project1/"
+    },
+    "pro": {
+      "_env": "production",
+      "_root": "http://qcfile.b0.upaiyun.com/fitness/project1/1483687720609/"
+    }
+  },
+  "project2": {
+    "version": 1483687720609,
+    "dev": {
+      "_env": "development",
+      "_root": "/static/project2/"
+    },
+    "pro": {
+      "_env": "production",
+      "_root": "http://qcfile.b0.upaiyun.com/fitness/project2/1483687720609/"
+    }
+  }
+}

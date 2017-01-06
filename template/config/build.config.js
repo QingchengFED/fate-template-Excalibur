@@ -5,9 +5,14 @@
 var dirVars = require('../config/dir.config')
 
 module.exports = {
-    fibo: {
-        build_path: `${dirVars.rootDir}/apps/fibo/build-scripts/build.js`,
-        pre_build_path: `${dirVars.rootDir}/apps/fibo/build-scripts/pre_build.js`,
-        config:`${dirVars.rootDir}/apps/web_admin/config/index.js`
+    project1: {
+        build_path: `${dirVars.rootDir}/apps/project1/build-scripts/build.js`,
+        pre_build_path: `${dirVars.rootDir}/apps/project1/build-scripts/pre_build.js`,
+        config:`${dirVars.rootDir}/apps/project1/config/index.js`
+    },
+    project2: {
+        build_path: `${dirVars.rootDir}/apps/project2/build-scripts/build.js`,
+        pre_build_path: `${dirVars.rootDir}/apps/project2/build-scripts/pre_build.js`,
+        config:`${dirVars.rootDir}/apps/project2/config/index.js`
     }
 }

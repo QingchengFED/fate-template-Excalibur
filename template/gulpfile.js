@@ -9,7 +9,7 @@ var gulp = require('gulp');
 var runSequence = require('run-sequence');
 var buildScript = require('./gulp-scripts/build');
 var options = require('./gulp-scripts/options');
-var tasks = options.dir ? require('./gulp-scripts/single.tasks') :require('./gulp-scripts/tasks');
+var tasks = require('./gulp-scripts/all.tasks');
 
 
 gulp.task('collectDists', function () {
@@ -33,6 +33,15 @@ gulp.task('clean', function () {
 });
 
 gulp.task('build', buildScript);
+
+gulp.task('test', function () {
+    runSequence(
+        'collectDists'
+        ,'buildVersion'
+        ,'replaceCdnLink'
+        ,'uploadCdn'
+    )
+});
 
 gulp.task('publish', function () {
     runSequence(
