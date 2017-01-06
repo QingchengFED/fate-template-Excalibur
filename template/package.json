@@ -7,7 +7,7 @@
   "scripts": {
     "test":"gulp test --env build --dirStr",
     "build": "gulp build --env build --dirStr",
-    "preBuild": "gulp build --env preBuild --dirs",
+    "preBuild": "gulp build --env preBuild --dirStr",
     "publish": "gulp publish --dirStr"
   },
   "dependencies": {

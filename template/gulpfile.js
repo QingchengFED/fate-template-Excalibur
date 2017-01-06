@@ -37,9 +37,6 @@ gulp.task('build', buildScript);
 gulp.task('test', function () {
     runSequence(
         'collectDists'
-        ,'buildVersion'
-        ,'replaceCdnLink'
-        ,'uploadCdn'
     )
 });
 

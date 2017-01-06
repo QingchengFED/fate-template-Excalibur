@@ -12,6 +12,7 @@ var knownOptions = {
 };
 
 var options = minimist(process.argv.slice(2), knownOptions);
-options.dirs=options.dirStr.split(',');
+
+options.dirs = options.dirStr == '' ? null : options.dirStr.split(',');
 
 module.exports = options;
