@@ -5,9 +5,9 @@
   "author": "zifenli <zifenli@gmail.com>",
   "private": true,
   "scripts": {
-    "test":"gulp test --env build --dirStr",
+    "test": "gulp test --env build --dirStr",
     "build": "gulp build --env build --dirStr",
-    "preBuild": "gulp build --env preBuild --dirStr",
+    "prePublish": "gulp build --env prePublish --dirStr",
     "publish": "gulp publish --dirStr"
   },
   "dependencies": {
@@ -52,6 +52,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.4",
     "function-bind": "^1.0.2",
+    "gulp-md5": "^0.1.2",
     "gulp-print": "^2.0.1",
     "gulp-upyun": "^1.1.4",
     "html-webpack-plugin": "^2.8.1",
