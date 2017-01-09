@@ -32,12 +32,17 @@ gulp.task('clean', function () {
     return tasks.clean();
 });
 
+gulp.task('uploadFiles',function (done) {
+    return tasks.uploadFiles(done);
+})
+
 gulp.task('build', buildScript);
 
 gulp.task('test', function () {
     runSequence(
         'collectDists',
-        'buildVersion'
+        'buildVersion',
+        'uploadFiles'
     )
 });
 

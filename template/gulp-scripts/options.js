@@ -8,7 +8,7 @@ var minimist = require('minimist');
 var config = require('../config/build.config');
 var _ = require('lodash');
 
-var allProjects = function getProjects() {
+var allProjects = function() {
     var _projects = [];
 
     _.forEach(config, function (value, key) {

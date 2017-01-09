@@ -11,6 +11,7 @@ var _ = require('lodash');
 var fs = require('fs');
 var build = require('./build');
 var options = require('./options');
+var inquirer = require('inquirer');
 
 var VERSION;
 var tasks = {};
@@ -90,7 +91,7 @@ tasks.replaceCdnLink = function () {
 };
 
 //上传CDN，./dist下的所有文件
-tasks.uploadCdn = function (src) {
+tasks.uploadCdn = function (password) {
     var compiled = _.template(deployConfig.cdnFolder);
     var stream = null;
 
@@ -98,10 +99,22 @@ tasks.uploadCdn = function (src) {
         src = `${dirVars.destDir}/${item}/**/*`;
 
         stream = gulp.src(src)
-          .pipe($.upyun.upyunDest(compiled({version: VERSION, project: item}), deployConfig.cdnAccount))
+        //.pipe($.upyun.upyunDest(compiled({version: VERSION, project: item}), deployConfig.cdnAccount))
+        .pipe($.upyun.upyunDest(compiled({version: VERSION, project: item}), {username:'chenchiyuan',password:password}))
     })
 
     return stream;
 };
+
+tasks.uploadFiles=function (done) {
+    inquirer.prompt([{
+        type: 'password',
+        message: 'Please enter your password:',
+        name: 'password'
+    }]).then(function(answers){
+        tasks.uploadCdn(answers.password);
+        done();
+    })
+}
 
 module.exports = tasks;
