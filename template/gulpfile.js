@@ -38,18 +38,10 @@ gulp.task('uploadFiles',function (done) {
 
 gulp.task('build', buildScript);
 
-gulp.task('test', function () {
-    runSequence(
-        'collectDists',
-        'buildVersion',
-        'uploadFiles'
-    )
-});
-
 gulp.task('publish', function () {
     runSequence(
         ['collectDists', 'buildVersion']
         ,'replaceCdnLink'
-        ,'uploadCdn'
+        ,'uploadFiles'
     )
 });
